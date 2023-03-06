@@ -1,0 +1,31 @@
+<style>
+    body{
+        font-family:sans-serif;
+        font-size:30px;
+    }
+</style>
+<span style="display:block;">MEET MAX ! </span>
+<span style="fon_size:10px;">Your Friend Powered By Ai ! </span>
+<form method="GET">
+    <input value="Reset Max" type="submit">
+</form>
+
+
+{% for chat in all %}
+    <p style="font-size:30px;">You: {{chat.1}}</p>
+    {% if chat.2 == 0 %}
+        <p style="font-size:25px;">Max: {{chat.0}}</p>
+    {% endif %}
+    {% if chat.2 == 1 %}
+        <img src="{{chat.0}}" alt='{{chat.1}}'>
+    {% endif %}
+    <hr>
+
+{%endfor%}
+<form action="." method="POST"> {% csrf_token %}
+    <input value="" type="text" name="com">
+    <input value="Chat >" type="submit">
+</form>
+
+<p style="font-size:10px;">Copywrite Peter ! </p>
+
